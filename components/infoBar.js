@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 
 class InfoBar extends React.Component {
   render() {
-  	const {coin,lingots} = this.props
+  	const {coin,lingots,navigation} = this.props
     return (
     	<View style={styles.infoBar}>
-    		<Text>coins: {coin}</Text>
-    		<Text>lingots: {lingots}</Text>
+    		<TouchableOpacity onPress={() => navigation('Succes')}><Text>Succes</Text></TouchableOpacity>
+    		<Text>Coins: {coin}</Text>
+    		<Text>Lingots: {lingots}</Text>
     	</View>
     );
   }

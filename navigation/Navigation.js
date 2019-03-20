@@ -4,6 +4,7 @@ import Achat from '../components/Achat'
 import Vente from '../components/Vente'
 import Entrepot from '../components/Entrepot'
 import Game from '../components/Game'
+import Succes from '../components/Succes'
 
 const SearchStackNavigator = createStackNavigator({
   Game: {
@@ -34,6 +35,12 @@ const SearchStackNavigator = createStackNavigator({
     screen: Vente,
     navigationOptions: {
       title: 'Vente'
+    }
+  },
+  Succes: {
+    screen: Succes,
+    navigationOptions: {
+      title: 'Succes'
     }
   }
 })

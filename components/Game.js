@@ -14,7 +14,7 @@ class Game extends React.Component {
     const {navigate} = this.props.navigation;
     return (
     	<View style={styles.game}>
-        <InfoBar/>
+        <InfoBar navigation={navigate}/>
         <GraphicGame/>
         <MenuBar navigation={navigate}/>
     	</View>
