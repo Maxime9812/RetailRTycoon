@@ -1,4 +1,4 @@
-const initialState = { lingots: 0 , coin: 0, entrepot: [{name:"vaginette", nombre: 1},{name:"vagine", nombre: 2}]}
+const initialState = { lingots: 0 , coin: 0, entrepot: [{name:"pot", nombre: 1},{name:"homme soja", nombre: 2}]}
 
 export default function Money(state = initialState, action) {
   let nextState
@@ -22,10 +22,21 @@ export default function Money(state = initialState, action) {
       }
     return nextState || state
     case 'ADD_ITEM':
-      nextState = {
+    var allreadyInEntrepot = false
+    state.entrepot.map((item)=>{if(item.name === action.name){allreadyInEntrepot=true}})
+    if(allreadyInEntrepot != false){
+      return {
+        ...state,
+        entrepot: state.entrepot.map((item) => (
+        item.name===action.name? {...item, nombre: item.nombre+1}: item
+    ))
+      }
+    }else{
+      return{
         ...state,
         entrepot: [...state.entrepot,{name: action.name,nombre: action.value}]
       }
+    }
     return nextState || state
   default:
     return state

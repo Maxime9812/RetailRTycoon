@@ -6,6 +6,7 @@ class ItemShop extends React.Component {
 	removeCoin() {
     const action = { type: "ADD_ITEM", value: 1,name: this.props.Name }
     this.props.dispatch(action)
+
   }
   render() {
   	const {Name, Prix, Taille} = this.props

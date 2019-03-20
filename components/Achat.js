@@ -7,7 +7,7 @@ export default class Achat extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <ItemShop Name="Wiwi" Prix="30000" Taille="2"/>
+        <ItemShop Name="pot" Prix="30000" Taille="2"/>
         <ItemShop Name="Mathi" Prix="10" Taille="2"/>
         <ItemShop Name="Maxi" Prix="30000" Taille="2"/>
         <ItemShop Name="LILI" Prix="30000" Taille="2"/>
