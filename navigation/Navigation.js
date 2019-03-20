@@ -5,8 +5,15 @@ import Vente from '../components/Vente'
 import Entrepot from '../components/Entrepot'
 import Game from '../components/Game'
 import Succes from '../components/Succes'
+import Login from '../components/Login'
 
 const SearchStackNavigator = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      title: 'Login'
+    }
+  },
   Game: {
     screen: Game,
     navigationOptions: {

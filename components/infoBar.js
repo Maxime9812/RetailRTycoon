@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text,View,TextInput,StyleSheet,TouchableOpacity} from 'react-native'
+import {Text,View,TextInput,StyleSheet,TouchableOpacity, Image} from 'react-native'
 import { connect } from 'react-redux'
 
 class InfoBar extends React.Component {
@@ -8,8 +8,14 @@ class InfoBar extends React.Component {
     return (
     	<View style={styles.infoBar}>
     		<TouchableOpacity onPress={() => navigation('Succes')}><Text>Succes</Text></TouchableOpacity>
-    		<Text>Coins: {coin}</Text>
-    		<Text>Lingots: {lingots}</Text>
+    		<View style={{flexDirection: 'row',alignItems: 'center'}}>
+    		<Image style={{width: 40,height: 40, resizeMode:'contain'}} source={require('../images/dollar.png')}/>
+    		<Text>{coin}</Text>
+    		</View>
+    		<View style={{flexDirection: 'row',alignItems: 'center'}}>
+    		<Image style={{width: 40,height: 40, resizeMode:'contain'}} source={require('../images/ingot.png')}/>
+    		<Text>{lingots}</Text>
+    		</View>
     	</View>
     );
   }

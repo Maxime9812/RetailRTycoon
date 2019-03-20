@@ -1,20 +1,20 @@
 import React from 'react'
 import {Button,Text,ScrollView,StyleSheet} from 'react-native'
-import ItemShop from './ItemShop'
+import ItemSucces from './ItemSucces'
 
 export default class Succes extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
+        <ItemSucces/>
+        <ItemSucces/>
+        <ItemSucces/>
+        <ItemSucces/>
+        <ItemSucces/>
+        <ItemSucces/>
+        <ItemSucces/>
+        <ItemSucces/>
       </ScrollView>
     );
   }
