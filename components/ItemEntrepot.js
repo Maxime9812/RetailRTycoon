@@ -1,15 +1,15 @@
 import React from 'react'
 import {StyleSheet,Button,Text,View,Linking} from 'react-native'
 
-export default class About extends React.Component {
+export default class ItemEntrepot extends React.Component {
  render() {
- 	const{Titre,Info} = this.props
+ 	const{Name,Nombre} = this.props
   return (
   	<View style={styles.containe}>
   		<View style={{backgroundColor:'red',width:65,height:65,borderRadius:5,marginLeft:3}}/>
 	  	<View style={styles.text}>
-			<Text style={styles.titre}>{Titre}</Text>
-			<Text style={styles.info}>{Info}</Text>
+			<Text style={styles.titre}>{Name}</Text>
+			<Text style={styles.info}>{Nombre}</Text>
 		</View>
    	</View>
   );

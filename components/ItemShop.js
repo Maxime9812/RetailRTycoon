@@ -1,29 +1,52 @@
 import React from 'react'
-import {StyleSheet,Button,Text,View,Linking} from 'react-native'
+import {StyleSheet,Button,Text,View,Linking,Image,TouchableOpacity} from 'react-native'
+import { connect } from 'react-redux'
 
-export default class About extends React.Component {
+class ItemShop extends React.Component {
+	removeCoin() {
+    const action = { type: "ADD_ITEM", value: 1,name: this.props.Name }
+    this.props.dispatch(action)
+  }
   render() {
+  	const {Name, Prix, Taille} = this.props
     return (
-    	<View style={styles.containe}>
-    		<View style={styles.info}>
-		      <Text style={styles.text} onPress={() => Linking.openURL('https://github.com/williamandrieu')}>William</Text>
-		      <Text style={styles.text} onPress={() => Linking.openURL('https://github.com/MathisTimo')}>Mathis</Text>
-		      <Text style={styles.text} onPress={() => Linking.openURL('https://github.com/Maxime9812')}>Maxime</Text>
-	      	</View>
-      	</View>
+    	<TouchableOpacity style={styles.containe} onPress={() => this.removeCoin()}>
+    		<Image source={{uri :'http://images.math.cnrs.fr/IMG/png/section8-image.png'}}/>
+	    		<View style={{marginLeft:15,flex:1}}>
+			    <Text style={styles.titre}>{Name}</Text>
+			    	<View style={{flexDirection:'row',justifyContent:'space-around',flex:1}}>
+				    	<Text style={styles.text}>Prix : {Prix}$</Text>
+				    	<Text style={styles.text}>Taille : {Taille}</Text>
+			    	</View>
+			    </View>
+		    </TouchableOpacity>
     );
   }
 }
 const styles = StyleSheet.create({
+	titre:{
+		marginBottom: 1,
+		marginLeft:6,
+		fontSize: 15,
+		color: 'white'
+	},
 	text:{
-		marginBottom: 10,
-		fontSize: 25,
+		marginBottom: 1,
+		fontSize: 15,
+		marginLeft:6,
 		color: 'white'
 	},
 	containe:{
 		alignItems: 'center',
 		flex: 1,
-		backgroundColor: '#273751'
+		backgroundColor: '#273751',
+		flexDirection:'row',
+		height:70,
+		borderRadius: 4,
+	    borderWidth: 0.5,
+	    borderColor: '#d6d7da',
+	    
+
 
 	},
 	info:{
@@ -31,3 +54,9 @@ const styles = StyleSheet.create({
 		flexDirection: 'column'
 	}
 })
+const mapStateToProps = (state) => {
+  return {
+    coin: state.coin
+  }
+}
+export default connect(mapStateToProps)(ItemShop)

@@ -17,7 +17,7 @@ class GraphicGame extends React.Component {
 }
 const styles = StyleSheet.create({
   graphicGame: {
-  	backgroundColor: 'black',
+  	backgroundColor: '#83C05B',
   	height: '80%'
   }
 });

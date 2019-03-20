@@ -11,7 +11,7 @@ export default class Login extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../images/LoginBG.png')} style={{width: '100%', height: '100%'}}>
+        <ImageBackground source={require('../images/LoginBG2.png')} style={{width: '100%', height: '100%'}}>
           <View style={{flex: 1,marginTop: '50%', alignItems: 'center', paddingBottom:10}}>
             <TextInput
             style={styles.logininput}

@@ -7,14 +7,14 @@ export default class Achat extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
+        <ItemShop Name="Wiwi" Prix="30000" Taille="2"/>
+        <ItemShop Name="Mathi" Prix="10" Taille="2"/>
+        <ItemShop Name="Maxi" Prix="30000" Taille="2"/>
+        <ItemShop Name="LILI" Prix="30000" Taille="2"/>
+        <ItemShop Name="PIPI" Prix="30000" Taille="2"/>
+        <ItemShop Name="GLUMUX" Prix="30000" Taille="2"/>
+        <ItemShop Name="ridux" Prix="30000" Taille="2"/>
+        <ItemShop Name="walidumixux" Prix="30000" Taille="2"/>
       </ScrollView>
     );
   }

@@ -11,43 +11,50 @@ const SearchStackNavigator = createStackNavigator({
   Login: {
     screen: Login,
     navigationOptions: {
-      title: 'Login'
+      title: 'Login',
     }
   },
   Game: {
     screen: Game,
     navigationOptions: {
-      title: 'Game'
+      title: 'Game',
+      gesturesEnabled: true,
+      
     }
   },
   Shop: {
     screen: Shop,
     navigationOptions: {
-      title: 'Shop'
+      title: 'Shop',
+      gesturesEnabled: true,
     }
   },
   Entrepot: {
     screen: Entrepot,
     navigationOptions: {
-      title: 'Entrepot'
+      title: 'Entrepot',
+      gesturesEnabled: true,
     }
   },
   Achat: {
     screen: Achat,
     navigationOptions: {
-      title: 'Achat'
+      title: 'Achat',
+      gesturesEnabled: true,
     }
   },
   Vente: {
     screen: Vente,
     navigationOptions: {
-      title: 'Vente'
+      title: 'Vente',
+      gesturesEnabled: true,
     }
   },
   Succes: {
     screen: Succes,
     navigationOptions: {
-      title: 'Succes'
+      title: 'Succes',
+      gesturesEnabled: true,
     }
   }
 })

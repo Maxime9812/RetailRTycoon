@@ -6,10 +6,6 @@ import GraphicGame from './GraphicGame'
 import { connect } from 'react-redux'
 
 class Game extends React.Component {
-	constructor(props) {
-    super(props);
-  }
-
   render() {
     const {navigate} = this.props.navigation;
     return (
@@ -31,7 +27,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    coin: 0
+    lingots: state.lingots,
+    entrepot: state.entrepot
   }
 }
 

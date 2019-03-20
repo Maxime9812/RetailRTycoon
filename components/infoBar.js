@@ -7,7 +7,7 @@ class InfoBar extends React.Component {
   	const {coin,lingots,navigation} = this.props
     return (
     	<View style={styles.infoBar}>
-    		<TouchableOpacity onPress={() => navigation('Succes')}><Text>Succes</Text></TouchableOpacity>
+    		<TouchableOpacity onPress={() => navigation('Succes')}><Image style={{width: 40,height: 40, resizeMode:'contain'}} source={require('../images/award.png')}/></TouchableOpacity>
     		<View style={{flexDirection: 'row',alignItems: 'center'}}>
     		<Image style={{width: 40,height: 40, resizeMode:'contain'}} source={require('../images/dollar.png')}/>
     		<Text>{coin}</Text>
