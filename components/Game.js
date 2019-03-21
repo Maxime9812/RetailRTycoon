@@ -5,7 +5,18 @@ import MenuBar from './MenuBar'
 import GraphicGame from './GraphicGame'
 import { connect } from 'react-redux'
 
+const DELAY = 10000
+
 class Game extends React.Component {
+  componentDidMount(){
+     this.myInterval = setInterval(() => {
+       this.changePrix();
+     }, DELAY)
+ }
+ changePrix(){
+   const action = { type: "CHANGE_PRIX"}
+   this.props.dispatch(action)
+ }
   render() {
     const {navigate} = this.props.navigation;
     return (

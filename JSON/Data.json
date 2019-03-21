@@ -2,11 +2,32 @@
 	"entrepot":[
 		
 	],
-	"achat":[
-		{"name":"baton", "prix": 100},{"name":"pot", "prix": 50}
+	"entrepotSize":[
+		50,100
 	],
+	"prix":[
+		50,100,200,400,800,1500,3000,5000,10000,20000,50000,75000,150000,1000000
+	],
+
+	"achat":[
+		{"id":0,"name":"clé USB", "prix": 50, "taille" : 1},
+        {"id":1,"name":"Montre", "prix": 100, "taille" : 5},
+        {"id":2,"name":"Boeuf WAGYU", "prix": 200, "taille" : 20},
+        {"id":3,"name":"Console de jeux", "prix": 400, "taille" : 50},
+        {"id":4,"name":"Appareil Photo", "prix": 800, "taille" : 100},
+        {"id":5,"name":"TV OLED", "prix": 1500, "taille" : 200},
+        {"id":6,"name":"Smartphone", "prix": 3000, "taille" : 200},
+        {"id":7,"name":"Pommebook", "prix": 5000, "taille" : 400},
+        {"id":8,"name":"Ordinateur Gamer", "prix": 10000, "taille" : 800},
+        {"id":9,"name":"Chaussures Moches", "prix": 20000, "taille" : 500},
+        {"id":10,"name":"Sac en Crocodile", "prix": 50000, "taille" : 1000},
+        {"id":11,"name":"TV 16K", "prix": 75000, "taille" : 2000},
+        {"id":12,"name":"Voiture", "prix": 150000, "taille" : 5000},
+        {"id":13,"name":"Smartphone en OR", "prix": 1000000, "taille" : 1}
+
+    ],
 	"shop":[
-		{"name":"", "prix": 0},{"name":"", "prix": 0}
+		{"name":"Le commerciale", "prix": 2 ,"id":1, "info":"gagne 10% en plus sur les ventes"},{"name":"", "prix": 3,"id":2},{"name":"", "prix": 3,"id":3},{"name":"", "prix": 4,"id":4},{"name":"", "prix": 6,"id":5}
 	],
 	"succes":[
 		{"titre":"Noob", "info": "Reach level 2"},{"titre":"Beginner", "info": "Reach level 3"},{"titre":"Expert", "info": "Reach level 4"},{"titre":"Master", "info": "Reach level 5"}

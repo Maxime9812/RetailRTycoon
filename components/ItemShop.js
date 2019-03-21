@@ -9,15 +9,16 @@ class ItemShop extends React.Component {
 
   }
   render() {
-  	const {Name, Prix, Taille} = this.props
+  	const {Name, Prix, Taille,Info} = this.props
     return (
     	<TouchableOpacity style={styles.containe} onPress={() => this.removeCoin()}>
-    		<Image source={{uri :'http://images.math.cnrs.fr/IMG/png/section8-image.png'}}/>
+    		<Image style={{width:65,height:65,borderRadius:5,marginLeft:3}} source={require('../ICON/APPICON2.png')}/>
 	    		<View style={{marginLeft:15,flex:1}}>
 			    <Text style={styles.titre}>{Name}</Text>
 			    	<View style={{flexDirection:'row',justifyContent:'space-around',flex:1}}>
-				    	<Text style={styles.text}>Prix : {Prix}$</Text>
+				    	<Text style={styles.text}>Prix : {Prix} Lingots</Text>
 				    	<Text style={styles.text}>Taille : {Taille}</Text>
+				    	<Text style={styles.text}>{Info}</Text>
 			    	</View>
 			    </View>
 		    </TouchableOpacity>

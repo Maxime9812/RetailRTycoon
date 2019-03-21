@@ -10,7 +10,7 @@ class GraphicGame extends React.Component {
   render() {
     return (
       <View style={styles.graphicGame}>
-        <Image style={{width: '100%',height: '100%', resizeMode:'contain'}} source={this.arr[this.props.coin/10]}/>
+        <Image style={{width: '100%',height: '100%', resizeMode:'contain'}} source={this.arr[this.props.level]}/>
       </View>
     );
   }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 });
 const mapStateToProps = (state) => {
   return {
-    coin: state.coin,
+    level: state.level,
   }
 }
 export default connect(mapStateToProps)(GraphicGame)

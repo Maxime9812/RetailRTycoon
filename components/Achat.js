@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button,Text,ScrollView,StyleSheet} from 'react-native'
-import ItemShop from './ItemShop'
+import ItemAchat from './ItemAchat'
 import { connect } from 'react-redux'
 
 class Achat extends React.Component {
@@ -9,8 +9,8 @@ class Achat extends React.Component {
     return (
       <ScrollView style={styles.container}>
       {
-          this.props.achat.map((item,index)=>(
-         <ItemShop key={index} Name={item.name} Prix={item.prix} Taille="2"/>)
+          this.props.achat.map((item)=>(
+         <ItemAchat key={item.id} Name={item.name} Prix={this.props.prix[item.id]} Taille={item.taille} id={item.id}/>)
          )
         }
         
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
 });
 const mapStateToProps = (state) => {
   return {
-    achat: state.achat
+    achat: state.achat,
+    prix: state.prix
   }
 }
 

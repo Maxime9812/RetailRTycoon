@@ -10,8 +10,8 @@ class Vente extends React.Component {
     return (
       <ScrollView style={styles.container}>
         {
-        	this.props.entrepot.map((item,index)=>(
-         <ItemVente key={index} Name={item.name} Nombre={item.nombre}/>)
+        	this.props.entrepot.map((item)=>(
+         <ItemVente key={item.id} Name={item.name} Prix={this.props.prix[item.id]}Nombre={item.nombre} Taille={item.taille}/>)
          )
         }
       </ScrollView>
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    entrepot: state.entrepot
+    entrepot: state.entrepot,
+    prix: state.prix
   }
 }
 

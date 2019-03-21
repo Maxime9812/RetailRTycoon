@@ -1,12 +1,12 @@
 import React from 'react'
-import {StyleSheet,Button,Text,View,Linking} from 'react-native'
+import {StyleSheet,Button,Text,View,Image} from 'react-native'
 
 export default class ItemEntrepot extends React.Component {
  render() {
  	const{Name,Nombre} = this.props
   return (
   	<View style={styles.containe}>
-  		<View style={{backgroundColor:'red',width:65,height:65,borderRadius:5,marginLeft:3}}/>
+  		<Image style={{width:65,height:65,borderRadius:5,marginLeft:3}} source={require('../ICON/APPICON2.png')}/>
 	  	<View style={styles.text}>
 			<Text style={styles.titre}>{Name}</Text>
 			<Text style={styles.info}>{Nombre}</Text>

@@ -10,7 +10,7 @@ class Shop extends React.Component {
       <ScrollView style={styles.container}>
         {
           this.props.shop.map((item,index)=>(
-         <ItemShop key={index} Name={item.name} Prix={item.prix} Taille="2"/>)
+         <ItemShop key={item.id} Name={item.name} Prix={item.prix} Taille="2" Info={item.info}/>)
          )
         }
       </ScrollView>

@@ -2,11 +2,15 @@ import Data from '../../JSON/Data.json'
 
 const initialState = { 
   lingots: 0 ,
-  coin: 0,
+  coin: 1000,
   entrepot: Data.entrepot,
   achat: Data.achat,
   shop: Data.shop,
-  succes: Data.succes
+  succes: Data.succes,
+  entrepotSize: Data.entrepotSize,
+  prix: Data.prix,
+  emplacement: 0,
+  level: 0
 }
 
 export default function Money(state = initialState, action) {
@@ -35,6 +39,14 @@ export default function Money(state = initialState, action) {
       }
     return nextState || state
 
+    // --- PRIX ---
+    case 'CHANGE_PRIX':
+     const VARIATION = 20
+       return {
+         ...state,
+         prix: state.prix.map((item) => (item = Math.round(item *(1+(Math.floor(((Math.random()* Math.floor(VARIATION))-(VARIATION/2)))/100)))))
+       }
+
     // --- ENTREPOT ---
     case 'ADD_ITEM':
     var allreadyInEntrepot = false
@@ -49,7 +61,7 @@ export default function Money(state = initialState, action) {
     }else{
       return{
         ...state,
-        entrepot: [...state.entrepot,{name: action.name,nombre: action.value}]
+        entrepot: [...state.entrepot,{id:action.id,name: action.name ,taille : action.taille, nombre:action.value}]
       }
     }
     case 'REMOVE_ITEM':
@@ -66,6 +78,10 @@ export default function Money(state = initialState, action) {
       return {...state,
       entrepot: state.entrepot.filter( item=> item != state.entrepot[remove])}
     }
+    case 'ADD_EMPLACEMENT':
+      return {...state,emplacement : state.emplacement+action.value}
+    case 'REMOVE_EMPLACEMENT':
+    return {...state,emplacement : state.emplacement-action.value}
   default:
     return state
   }

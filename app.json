@@ -1,29 +1,15 @@
-{
-  "expo": {
+ {
+   "expo": {
     "name": "RetailRTycoon",
-    "slug": "AwesomeProject",
-    "privacy": "public",
-    "sdkVersion": "32.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "icon": "./ICON/APPICON2.png",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "slug": "rigolo",
+    "sdkVersion": "32.0.0",
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.RoyalTea.RetailRTycoon"
+    },
+    "android": {
+      "package": "com.RoyalTea.RetailRTycoon"
     }
-  }
-}
+   }
+ }
