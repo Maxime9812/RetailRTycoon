@@ -19,26 +19,25 @@ class ItemAchat extends React.Component {
 
   }
   buyItem(){
-  	const {emplacement, Taille,entrepotSize,level,coin,Prix} = this.props
-  	if(emplacement + Taille <= entrepotSize[level] && coin >= Prix){
-  		this.removeCoin()
-  		this.addItem()
-  		this.addEmplacement()
-  	}
+	this.removeCoin()
+	this.addItem()
+	this.addEmplacement()
   }
   render() {
-  	const {Name, Prix, Taille} = this.props
-    return (
-    	<TouchableOpacity style={styles.containe} onPress={() => this.buyItem()}>
-    		<Image style={{width:65,height:65,borderRadius:5,marginLeft:3}} source={require('../ICON/APPICON2.png')}/>
+  	const {Name, Prix, Taille,Disabled,Source} = this.props
+  		return (
+    	<View style={{alignItems: 'center', opacity: Disabled ? 0.2 : 1 }}>
+    	<TouchableOpacity disabled={Disabled} style={styles.containe} onPress={() => this.buyItem()}>
+    		<Image style={{width:60,height:60,borderRadius:5,marginLeft:3}} source={Source}/>
 	    		<View style={{marginLeft:15,flex:1}}>
-			    <Text style={styles.titre}>{Name}</Text>
-			    	<View style={{flexDirection:'row',justifyContent:'space-around',flex:1}}>
-				    	<Text style={styles.text}>Prix : {Prix}$</Text>
-				    	<Text style={styles.text}>Taille : {Taille}</Text>
-			    	</View>
+			  	  <Text style={styles.titre}>{Name}</Text>
+			  	  <Text style={styles.taille}><Image source={require('../images/size.png')} style={{width:22,height:22}}/>   {Taille}</Text>
 			    </View>
+			  <View style={{flexDirection:'row',justifyContent:'space-around',flex:1}}>   	
+		        	<Text style={styles.text}>{Prix}  <Image source={require('../images/dollar.png')} style={{width:24,height:24}}/></Text>
+			    	</View>
 		    </TouchableOpacity>
+		</View>
     );
   }
 }
@@ -46,27 +45,39 @@ const styles = StyleSheet.create({
 	titre:{
 		marginBottom: 1,
 		marginLeft:6,
-		fontSize: 15,
-		color: 'white'
+		fontSize: 18,
+		color: 'white',
+		fontFamily: 'Roboto',
+	    fontWeight:'700',
 	},
 	text:{
+
 		marginBottom: 1,
-		fontSize: 15,
+		fontSize: 20,
 		marginLeft:6,
-		color: 'white'
+		color: 'white',
+		fontFamily: 'Roboto',
+	    fontWeight:'700',
+	},
+		taille:{
+
+		marginBottom: 1,
+		fontSize: 17,
+		marginTop: 4,
+		marginLeft:6,
+		color: 'white',
+		fontFamily: 'Roboto',
+	    fontWeight:'700',
 	},
 	containe:{
 		alignItems: 'center',
 		flex: 1,
 		backgroundColor: '#273751',
 		flexDirection:'row',
-		height:70,
+		height:80,
+		width: '80%',
 		borderRadius: 4,
-	    borderWidth: 0.5,
-	    borderColor: '#d6d7da',
-	    
-
-
+	    marginTop: 10
 	},
 	info:{
 		flex: 1,

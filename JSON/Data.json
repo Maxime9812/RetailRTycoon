@@ -3,34 +3,50 @@
 		
 	],
 	"entrepotSize":[
-		50,100
+		50,100,200,500,1000,2000
 	],
 	"prix":[
 		50,100,200,400,800,1500,3000,5000,10000,20000,50000,75000,150000,1000000
 	],
 
 	"achat":[
-		{"id":0,"name":"clé USB", "prix": 50, "taille" : 1},
-        {"id":1,"name":"Montre", "prix": 100, "taille" : 5},
-        {"id":2,"name":"Boeuf WAGYU", "prix": 200, "taille" : 20},
-        {"id":3,"name":"Console de jeux", "prix": 400, "taille" : 50},
-        {"id":4,"name":"Appareil Photo", "prix": 800, "taille" : 100},
-        {"id":5,"name":"TV OLED", "prix": 1500, "taille" : 200},
-        {"id":6,"name":"Smartphone", "prix": 3000, "taille" : 200},
-        {"id":7,"name":"Pommebook", "prix": 5000, "taille" : 400},
-        {"id":8,"name":"Ordinateur Gamer", "prix": 10000, "taille" : 800},
-        {"id":9,"name":"Chaussures Moches", "prix": 20000, "taille" : 500},
-        {"id":10,"name":"Sac en Crocodile", "prix": 50000, "taille" : 1000},
-        {"id":11,"name":"TV 16K", "prix": 75000, "taille" : 2000},
-        {"id":12,"name":"Voiture", "prix": 150000, "taille" : 5000},
-        {"id":13,"name":"Smartphone en OR", "prix": 1000000, "taille" : 1}
-
+		{"id":0,"name":"Clé USB", "taille" : 1},
+        {"id":1,"name":"Montre", "taille" : 5},
+        {"id":2,"name":"Boeuf WAGYU", "taille" : 20},
+        {"id":3,"name":"Console de jeux", "taille" : 50},
+        {"id":4,"name":"Appareil Photo","taille" : 100},
+        {"id":5,"name":"TV OLED","taille" : 200},
+        {"id":6,"name":"Smartphone","taille" : 200},
+        {"id":7,"name":"Pommebook","taille" : 400},
+        {"id":8,"name":"Ordinateur Gamer","taille" : 800},
+        {"id":9,"name":"Chaussures Moches","taille" : 500},
+        {"id":10,"name":"Sac en Crocodile","taille" : 1000},
+        {"id":11,"name":"TV 16K","taille" : 2000},
+        {"id":12,"name":"Voiture","taille" : 5000},
+        {"id":13,"name":"Smartphone en OR","taille" : 1}
     ],
 	"shop":[
-		{"name":"Le commerciale", "prix": 2 ,"id":1, "info":"gagne 10% en plus sur les ventes"},{"name":"", "prix": 3,"id":2},{"name":"", "prix": 3,"id":3},{"name":"", "prix": 4,"id":4},{"name":"", "prix": 6,"id":5}
+		{"name":"Le commerciale", "prix": 2 ,"id":1, "info":"gagne 10% en plus sur les ventes"},
+		{"name":"", "prix": 3,"id":2},
+		{"name":"", "prix": 3,"id":3},
+		{"name":"", "prix": 4,"id":4},
+		{"name":"", "prix": 6,"id":5}
+	],
+	"entrepotUp":[
+		{"name":"Le commerciale", "prix": 2 ,"id":1, "info":"gagne 10% en plus sur les ventes"},
+		{"name":"", "prix": 3,"id":2},{"name":"", "prix": 300000,"id":3},{"name":"", "prix": 4,"id":4},
+		{"name":"", "prix": 6,"id":5}
 	],
 	"succes":[
-		{"titre":"Noob", "info": "Reach level 2"},{"titre":"Beginner", "info": "Reach level 3"},{"titre":"Expert", "info": "Reach level 4"},{"titre":"Master", "info": "Reach level 5"}
-		,{"titre":"Angamara", "info": "Reach level 10"},{"titre":"Mathis", "info": "Loose 100$"},{"titre":"Beginner", "info": ""},{"titre":"Beginner", "info": "Loose 100$"}
+		{"id": 0 ,"titre":"AnUSB", "info": "Buy 10 USB key.","level": 0 ,"reward":[0]},
+		{"id": 1 ,"titre":"Where House ?", "info": "Upgrade your warehouse.","level": 0,"reward":[0,0,0,0,0]},
+		{"id": 2 ,"titre":"Jeff Bezos’s trainee", "info": "Selling at a loss, and loss 200$.","level": 0,"reward":[0]},
+		{"id": 3 ,"titre":"Beef Gourmet", "info": "Buy 5 Wagyu Steaks.","level": 0,"reward":[0]}
+		,{"id": 4 ,"titre":"Free Ingots Master", "info": "Watch 10 ads thru the free ingots menu.","level": 0,"reward":[0]},
+		{"id": 5 ,"titre":"Ingots spender", "info": "Buy 2 upgrades in the Shop","level": 0,"reward":[0]},
+		{"id": 6 ,"titre":"Xx_BeastMatser64_xX", "info": "Buy a gaming computer and sell it.","level": 0,"reward":[0]},
+		{"id": 7 ,"titre":"6ix9ine", "info": "Reach a balance of 696969$ or more.","level": 0,"reward":[0]},
+		{"id": 8 ,"titre":"Notice of withdrawal", "info": "Sell a Golden iPhone.","level": 0,"reward":[0]},
+		{"id": 9 ,"titre":"Angladitor", "info": "Accomplish all challenges.","level": 0,"reward":[0]}
 	]
 }

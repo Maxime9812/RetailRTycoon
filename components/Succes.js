@@ -10,7 +10,7 @@ class Succes extends React.Component {
       <ScrollView style={styles.container}>
         {
           this.props.succes.map((item,index)=>(
-         <ItemSucces key={index} Titre={item.titre} Info={item.info}/>)
+         <ItemSucces key={index} Titre={item.titre} Info={item.info} NbReward={item.reward.length}/>)
          )
         }
       </ScrollView>

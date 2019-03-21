@@ -8,9 +8,11 @@ const initialState = {
   shop: Data.shop,
   succes: Data.succes,
   entrepotSize: Data.entrepotSize,
+  entrepotUp: Data.entrepotUp,
   prix: Data.prix,
   emplacement: 0,
-  level: 0
+  level: 1,
+  point:0
 }
 
 export default function Money(state = initialState, action) {
@@ -24,7 +26,26 @@ export default function Money(state = initialState, action) {
           lingots: state.lingots+action.value
         }
       return nextState || state
-
+    // --- POINT ---
+        case 'ADD_POINT':
+        nextState = {
+          ...state,
+          point: state.point+action.value
+        }
+      return nextState || state
+      case 'REMOVE_ALL_POINT':
+        nextState = {
+          ...state,
+          point: 0
+        }
+      return nextState || state
+        // --- LEVEL ---
+      case 'ADD_LEVEL':
+      nextState = {
+        ...state,
+        level: parseInt(state.level)+parseInt(action.value)
+      }
+    return nextState || state
       // --- COIN ---
     case 'ADD_COIN':
       nextState = {

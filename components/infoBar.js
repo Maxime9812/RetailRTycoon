@@ -15,7 +15,7 @@ class InfoBar extends React.Component {
       console.log('1');
     await AdMobRewarded.requestAdAsync();
     console.log('2');
-    setTimeout(() => {this.addLingots()}, 3000);
+    setTimeout(() => {this.addLingots()}, 10000);
     await AdMobRewarded.showAdAsync();
     console.log('3');
     };
@@ -35,7 +35,7 @@ class InfoBar extends React.Component {
           <Text style={{fontFamily: 'Roboto', fontWeight:'700',fontSize:25, color:'white', marginLeft:10}}>{coin}</Text>
           </View>
           <View style={{fontFamily: 'Roboto', flexDirection: 'row',alignItems: 'center'}}>
-          <TouchableOpacity style={{flexDirection: 'row',alignItems: 'center'}} onPress={this._openRewarded}><Image style={{width: 25,height: 25, resizeMode:'contain'}} source={require('../images/ingot.png')}/>
+          <TouchableOpacity style={{flexDirection: 'row',alignItems: 'center'}} onPress={() => this._openRewarded()}><Image style={{width: 25,height: 25, resizeMode:'contain'}} source={require('../images/ingot.png')}/>
           <Text style={{fontFamily: 'Roboto', fontWeight:'700',fontSize:25, color:'white', marginLeft:10}}>{lingots}</Text></TouchableOpacity>
           </View>
       </View>
