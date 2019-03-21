@@ -1,20 +1,19 @@
 import React from 'react'
 import {Button,Text,ScrollView,StyleSheet} from 'react-native'
-import ItemShop from './ItemShop'
+import ItemVente from './ItemVente'
+import { connect } from 'react-redux'
 
-export default class Vente extends React.Component {
+class Vente extends React.Component {
   render() {
+  	var id = 0
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
+        {
+        	this.props.entrepot.map((item,index)=>(
+         <ItemVente key={index} Name={item.name} Nombre={item.nombre}/>)
+         )
+        }
       </ScrollView>
     );
   }
@@ -25,3 +24,11 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+
+const mapStateToProps = (state) => {
+  return {
+    entrepot: state.entrepot
+  }
+}
+
+export default connect(mapStateToProps)(Vente)

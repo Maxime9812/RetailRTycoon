@@ -1,0 +1,15 @@
+{
+	"entrepot":[
+		
+	],
+	"achat":[
+		{"name":"baton", "prix": 100},{"name":"pot", "prix": 50}
+	],
+	"shop":[
+		{"name":"", "prix": 0},{"name":"", "prix": 0}
+	],
+	"succes":[
+		{"titre":"Noob", "info": "Reach level 2"},{"titre":"Beginner", "info": "Reach level 3"},{"titre":"Expert", "info": "Reach level 4"},{"titre":"Master", "info": "Reach level 5"}
+		,{"titre":"Angamara", "info": "Reach level 10"},{"titre":"Mathis", "info": "Loose 100$"},{"titre":"Beginner", "info": ""},{"titre":"Beginner", "info": "Loose 100$"}
+	]
+}

@@ -1,20 +1,18 @@
 import React from 'react'
 import {Button,Text,ScrollView,StyleSheet} from 'react-native'
 import ItemShop from './ItemShop'
+import { connect } from 'react-redux'
 
-export default class Shop extends React.Component {
+class Shop extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
-        <ItemShop/>
+        {
+          this.props.shop.map((item,index)=>(
+         <ItemShop key={index} Name={item.name} Prix={item.prix} Taille="2"/>)
+         )
+        }
       </ScrollView>
     );
   }
@@ -25,3 +23,10 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+const mapStateToProps = (state) => {
+  return {
+    shop: state.shop
+  }
+}
+
+export default connect(mapStateToProps)(Shop)

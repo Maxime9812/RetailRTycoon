@@ -1,29 +1,29 @@
 import React from 'react'
-import {Text,View,TextInput,StyleSheet,TouchableOpacity} from 'react-native'
+import {Text,View,TextInput,StyleSheet,TouchableOpacity, Image, ImageBackground} from 'react-native'
 
 export default class MenuBar extends React.Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
   }
 
   render() {
     const {navigation} = this.props
     return (
-    	<View style={styles.infoBar}>
-    		<TouchableOpacity onPress={() => navigation('Entrepot')}><Text>Entrepot</Text></TouchableOpacity>
-    		<TouchableOpacity onPress={() => navigation('Achat')}><Text>Achat</Text></TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation('Vente')}><Text>Vente</Text></TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation('Shop')}><Text>Shop</Text></TouchableOpacity>
-    	</View>
+      <View style={styles.infoBar}>
+        <TouchableOpacity onPress={() => navigation('Entrepot')}><Image style={{width: 45,height: 45, resizeMode:'contain'}} source={require('../images/warehouse.png')}/></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation('Achat')}><Image style={{width: 45,height: 45, resizeMode:'contain'}} source={require('../images/buy.png')}/></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation('Vente')}><Image style={{width: 45,height: 45, resizeMode:'contain'}} source={require('../images/sell.png')}/></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation('Shop')}><Image style={{width: 45,height: 45, resizeMode:'contain'}} source={require('../images/shop.png')}/></TouchableOpacity>
+      </View>
     );
   }
 }
 const styles = StyleSheet.create({
   infoBar: {
-  	backgroundColor: 'grey',
-  	flexDirection: 'row',
-  	justifyContent: 'space-around',
-  	height: '13%',
-  	alignItems: 'center'
+    backgroundColor: '#282828',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    height: '9%',
+    alignItems: 'center'
   }
 });

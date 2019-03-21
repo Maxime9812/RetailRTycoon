@@ -1,30 +1,28 @@
 import React from 'react'
-import {Text,View,TextInput,StyleSheet,TouchableOpacity} from 'react-native'
+import {Text,View,TextInput,StyleSheet,TouchableOpacity, Image} from 'react-native'
 import { connect } from 'react-redux'
 
 class GraphicGame extends React.Component {
-    addCoin() {
-    const action = { type: "ADD_COIN", value: 1 }
-    this.props.dispatch(action)
+  constructor(props){
+    super(props)
+    this.arr=[require('../images/hangamarabg.png'),require('../images/conteneurbg.png'),require('../images/hangamarabg.png')]; 
   }
-
   render() {
     return (
-    	<TouchableOpacity onPress={() => this.addCoin()} style={styles.graphicGame}>
-    	</TouchableOpacity>
+      <View style={styles.graphicGame}>
+        <Image style={{width: '100%',height: '100%', resizeMode:'contain'}} source={this.arr[this.props.coin/10]}/>
+      </View>
     );
   }
 }
 const styles = StyleSheet.create({
   graphicGame: {
-  	backgroundColor: '#83C05B',
-  	height: '80%'
+    height: '84%'
   }
 });
 const mapStateToProps = (state) => {
   return {
     coin: state.coin,
-    lingots: state.lingots
   }
 }
 export default connect(mapStateToProps)(GraphicGame)

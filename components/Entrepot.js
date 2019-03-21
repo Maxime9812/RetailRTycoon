@@ -8,8 +8,9 @@ class Entrepot extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        {	this.props.entrepot.map((item)=>(
-         <ItemEntrepot Name={item.name} Nombre={item.nombre}/>)
+        {
+        	this.props.entrepot.map((item,index)=>(
+         <ItemEntrepot key={index} Name={item.name} Nombre={item.nombre}/>)
          )
         }
 
