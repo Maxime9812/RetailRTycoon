@@ -4,7 +4,15 @@ import { connect } from 'react-redux'
 
 class ItemAchat extends React.Component {
 	removeCoin() {
-    const action = { type: "REMOVE_COIN", value: this.props.Prix,name: this.props.Name }
+    const action = { type: "REMOVE_COIN", value: this.props.Prix}
+    this.props.dispatch(action)
+
+  }
+  addSucces(id) {
+	var action = { type: "ADD_SUCCES", id:id}
+    this.props.dispatch(action)
+    var succesWin = this.props.succes.find(item => item.id=== id)
+    action = { type: "ADD_COIN", value:succesWin.reward[succesWin.level]}
     this.props.dispatch(action)
 
   }
@@ -18,10 +26,24 @@ class ItemAchat extends React.Component {
     this.props.dispatch(action)
 
   }
+  verifBuySucces(){
+  	var targetMySucces = this.props.mySucces.find(item => item.objetId=== this.props.id)
+  	if(targetMySucces != undefined){
+  		var targetSucces = this.props.succes.find(item => item.id=== targetMySucces.idSucces)
+  		if(targetSucces.level < targetSucces.reward.length){
+  			var action = { type: "ADD_MYSUCCES",id:this.props.id}
+		    this.props.dispatch(action)
+		    if(targetMySucces.nb === targetSucces.value[targetSucces.level]-1){
+		    	this.addSucces(targetSucces.id)
+		    }
+  		}
+  	}
+  }
   buyItem(){
 	this.removeCoin()
 	this.addItem()
 	this.addEmplacement()
+	this.verifBuySucces()
   }
   render() {
   	const {Name, Prix, Taille,Disabled,Source} = this.props
@@ -89,7 +111,9 @@ const mapStateToProps = (state) => {
     coin: state.coin,
     emplacement: state.emplacement,
     entrepotSize: state.entrepotSize,
-    level: state.level
+    level: state.level,
+    mySucces: state.mySucces,
+    succes:state.succes
 
   }
 }

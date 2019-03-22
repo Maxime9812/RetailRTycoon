@@ -9,15 +9,15 @@ class ItemEntrepotUp extends React.Component {
 
   }
   render() {
-  	const {Name, Prix, Taille,Info,Disabled,Source} = this.props
+  	const {Name, Prix, Taille,Disabled,Source} = this.props
     return (
     	<TouchableOpacity disabled={Disabled} style={[styles.containe,{opacity: Disabled ? 0.2 : 1 }]} >
     		<Image style={{width:65,height:65,borderRadius:5,marginLeft:3}} source={Source}/>
 	    		<View style={{marginLeft:15,flex:1}}>
 			    <Text style={styles.titre}>{Name}</Text>
-			    	<View style={{flexDirection:'row',justifyContent:'space-around',flex:1}}>
+			    	<View style={{flexDirection:'column',justifyContent:'space-around',flex:1}}>
 				    	<Text style={styles.text}>Prix : {Prix} coin</Text>
-				    	<Text style={styles.text}>{Info}</Text>
+				    	<Text style={styles.text}>Emplacements: {Taille}</Text>
 			    	</View>
 			    </View>
 		 </TouchableOpacity>

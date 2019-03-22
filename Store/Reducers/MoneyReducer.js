@@ -2,7 +2,7 @@ import Data from '../../JSON/Data.json'
 
 const initialState = { 
   lingots: 0 ,
-  coin: 1000,
+  coin: 10000,
   entrepot: Data.entrepot,
   achat: Data.achat,
   shop: Data.shop,
@@ -12,7 +12,8 @@ const initialState = {
   prix: Data.prix,
   emplacement: 0,
   level: 1,
-  point:0
+  point:0,
+  mySucces: [{objetId:0,nb:0,idSucces:0},{objetId:2,nb:0,idSucces:3}]
 }
 
 export default function Money(state = initialState, action) {
@@ -103,6 +104,19 @@ export default function Money(state = initialState, action) {
       return {...state,emplacement : state.emplacement+action.value}
     case 'REMOVE_EMPLACEMENT':
     return {...state,emplacement : state.emplacement-action.value}
+    //--- SUCCES ---
+    case 'ADD_SUCCES':
+    return {
+        ...state,
+        succes: state.succes.map((item) => (
+        item.id===action.id? {...item, level: item.level+1}: item
+    ))}
+    case 'ADD_MYSUCCES':
+    return {
+        ...state,
+        mySucces: state.mySucces.map((item,index) => (
+        item.objetId === action.id? {...item,nb:item.nb+1}: item))
+    }
   default:
     return state
   }

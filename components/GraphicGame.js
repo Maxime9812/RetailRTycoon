@@ -16,7 +16,7 @@ class GraphicGame extends React.Component {
     if (this.props.point+1 > 100*parseInt(this.props.level)) 
     {
       this.addLevel();
-      Alert.alert('Bravo vous etes passé niveau '+ parseInt(this.props.level));
+      Alert.alert('Bravo vous etes passé niveau '+ parseInt(this.props.level+1));
       this.removeAllPoint();
     }else
     {
@@ -39,10 +39,11 @@ class GraphicGame extends React.Component {
     this.props.dispatch(action);
   }
   render() {
+    const {level,point} = this.props
     return (
-      <TouchableOpacity activeOpacity={0.9} style={styles.graphicGame} onPress={() => { this.pressButton()}}>
-         <Progress.Bar progress={((this.props.point / this.props.level)/100)} width={null} borderWidth={0} />
-        <Image style={{width: '100%',height: '100%', resizeMode:'contain'}} source={IMAGES[(this.props.level)-1]}/>
+      <TouchableOpacity activeOpacity={0.9} style={[styles.graphicGame,{backgroundColor: level===6?'#abb45b':'#6ec44a'}]} onPress={() => { this.pressButton()}}>
+         <Progress.Bar progress={((point / level)/100)} width={null} borderWidth={0} />
+        <Image style={{width: '100%',height: '100%', resizeMode:'contain'}} source={IMAGES[(level)-1]}/>
       </TouchableOpacity>
     );
   }
@@ -50,7 +51,7 @@ class GraphicGame extends React.Component {
 const styles = StyleSheet.create({
   graphicGame: {
     height: '84%',
-    backgroundColor: 'green'
+    
   }
 });
 const mapStateToProps = (state) => {

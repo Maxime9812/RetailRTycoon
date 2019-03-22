@@ -11,50 +11,77 @@ const SearchStackNavigator = createStackNavigator({
   Login: {
     screen: Login,
     navigationOptions: {
-      title: 'Login',
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null,
+      },
+      headerLeft: null
     }
   },
   Game: {
     screen: Game,
     navigationOptions: {
-      title: 'Game',
       gesturesEnabled: true,
-      
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null
+      },
+      headerLeft: null
     }
   },
   Shop: {
     screen: Shop,
     navigationOptions: {
-      title: 'Shop',
       gesturesEnabled: true,
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null
+      },
+      headerLeft: null
     }
   },
   Entrepot: {
     screen: Entrepot,
     navigationOptions: {
-      title: 'Entrepot',
       gesturesEnabled: true,
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null
+      },
+      headerLeft: null
     }
   },
   Achat: {
     screen: Achat,
     navigationOptions: {
-      title: 'Achat',
       gesturesEnabled: true,
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null
+      },
+      headerLeft: null
     }
   },
   Vente: {
     screen: Vente,
     navigationOptions: {
-      title: 'Vente',
       gesturesEnabled: true,
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null
+      },
+      headerLeft: null
     }
   },
   Succes: {
     screen: Succes,
     navigationOptions: {
-      title: 'Succes',
       gesturesEnabled: true,
+      headerStyle: {
+        backgroundColor: 'black',
+        height: null
+      },
+      headerLeft: null
     }
   }
 })

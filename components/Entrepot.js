@@ -32,8 +32,8 @@ class Entrepot extends React.Component {
     super(props);
     this.state = { MenuObject: true };
 }
-addEntrepoUp(index,name,prix,info,disabled){
-  return disabled?<ItemEntrepotUp Source={IMAGESENTREPOT[index]} key={index} Name={name} Prix={prix} Info={info} Disabled={true}/>:<ItemEntrepotUp Source={IMAGESENTREPOT[index]} key={index} Name={name} Prix={prix} Info={info} Disabled={false}/>
+addEntrepoUp(id,name,prix,info,disabled){
+  return disabled?<ItemEntrepotUp Source={IMAGESENTREPOT[id-1]} key={id} Name={name} Prix={prix} Info={info} Taille={this.props.entrepotSize[id]}Disabled={true}/>:<ItemEntrepotUp Source={IMAGESENTREPOT[id-1]} key={id} Name={name} Prix={prix} Info={info} Taille={this.props.entrepotSize[id]} Disabled={false}/>
 }
 
     render() {
@@ -47,8 +47,8 @@ addEntrepoUp(index,name,prix,info,disabled){
           </View>
           <ScrollView style={styles.container}>
             {
-              this.props.entrepotUp.map((item,index)=>(
-             item.prix<= this.props.coin ? this.addEntrepoUp(index,item.name,item.prix,item.info,false) : this.addEntrepoUp(index,item.name,item.prix,item.info,true)
+              this.props.entrepotUp.map((item)=>(
+             item.prix<= this.props.coin ? this.addEntrepoUp(item.id,item.name,item.prix,item.info,false) : this.addEntrepoUp(index,item.name,item.prix,item.info,true)
              )
              )
             }
